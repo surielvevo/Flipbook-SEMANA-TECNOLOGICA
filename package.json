@@ -1,28 +1,29 @@
 {
   "name": "flipbook-semana-tecnologica",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
-    "@react-pdf/renderer": "latest",
+    "next": "^16.1.10",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-pageflip": "latest",
     "framer-motion": "latest",
     "lucide-react": "latest",
-    "next": "15.0.0",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-pageflip": "latest"
+    "@react-pdf/renderer": "latest",
+    "canvas-confetti": "latest",
+    "@tailwindcss/postcss": "latest",
+    "tailwindcss": "latest"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "latest",
+    "typescript": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "tailwindcss": "4.0.0",
-    "typescript": "latest"
+    "postcss": "latest"
   }
 }
