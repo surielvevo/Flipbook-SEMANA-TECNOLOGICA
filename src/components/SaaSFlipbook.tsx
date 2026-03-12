@@ -5,12 +5,24 @@ import Image from 'next/image';
 import { Clock, MapPin, User, Calendar } from 'lucide-react';
 import { scheduleData } from '../data/schedule';
 
-const Page = forwardRef(({ children, number, isCover = false }: any, ref) => (
-  <div ref={ref} className="relative bg-white overflow-hidden flex flex-col h-full shadow-inner border-l border-gray-100">
-    <div className={`flex-grow h-full flex flex-col relative z-10 ${isCover ? '' : 'p-6'}`}>{children}</div>
-    {!isCover && (<div className="absolute bottom-2 w-full text-center z-10 text-[10px] font-bold text-[#0033A0]">Pág. {number}</div>)}
-  </div>
-));
+interface PageProps {
+  children: React.ReactNode;
+  number: string | number;
+  isCover?: boolean;
+}
+
+const Page = forwardRef<HTMLDivElement, PageProps>(
+  ({ children, number, isCover = false }, ref) => (
+    <div ref={ref} className="relative bg-white overflow-hidden flex flex-col h-full shadow-inner border-l border-gray-100">
+      <div className={`flex-grow h-full flex flex-col relative z-10 ${isCover ? '' : 'p-6'}`}>{children}</div>
+      {!isCover && (
+        <div className="absolute bottom-2 w-full text-center z-10 text-[10px] font-bold text-[#0033A0]">
+          Pág. {number}
+        </div>
+      )}
+    </div>
+  )
+);
 Page.displayName = 'Page';
 
 export default function SaaSFlipbook() {
