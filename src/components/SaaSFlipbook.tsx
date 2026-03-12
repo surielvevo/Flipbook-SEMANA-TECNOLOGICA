@@ -1,6 +1,5 @@
 'use client';
 import React, { useState, useEffect, forwardRef } from 'react';
-import Image from 'next/image';
 import HTMLFlipBook from 'react-pageflip';
 import { Clock, MapPin, User, Calendar } from 'lucide-react';
 import { scheduleData } from '../data/schedule';
@@ -27,49 +26,29 @@ export default function SaaSFlipbook() {
       <div className="w-full max-w-[550px] mx-auto flex justify-center items-center">
         {/* @ts-ignore */}
         <HTMLFlipBook 
-          width={550} 
-          height={750} 
-          size="stretch" 
-          minWidth={280} 
-          maxWidth={550} 
-          minHeight={380} 
-          maxHeight={750} 
-          maxShadowOpacity={0.5} 
-          showCover={true} 
-          mobileScrollSupport={true} 
+          width={550} height={750} size="stretch" 
+          minWidth={280} maxWidth={550} minHeight={380} maxHeight={750} 
+          maxShadowOpacity={0.5} showCover={true} mobileScrollSupport={true} 
           className="shadow-2xl mx-auto"
         >
-          
-          {/* PORTADA FRONT: MÁRGENES PREMIUM */}
+          {/* PORTADA FRONT */}
           <Page isCover={true} number="Portada">
-            <div className="absolute inset-0 bg-[url('/portada-flipbook.png')] bg-cover bg-center bg-no-repeat z-0"></div>
-            
-            {/* py-8 asegura separación vertical perfecta del borde de la pantalla */}
+            <div className="absolute inset-0 bg-[url('/portada-flipbook.png')] bg-[length:200%_100%] bg-right bg-no-repeat z-0"></div>
             <div className="relative z-10 h-full flex flex-col justify-between items-center text-center py-8">
-              
-              {/* Logos con ancho controlado para alinearse con la tarjeta */}
-              <div className="w-[85%] max-w-[260px] flex justify-center">
+              <div className="w-[85%] max-w-[260px] flex justify-center mt-2">
                 <img src="/logo-institucional.png" alt="Logo Institucional" className="w-full drop-shadow-md object-contain" />
               </div>
-              
               <div className="flex-grow"></div>
-              
-              {/* Tarjeta Sólida con Padding Interno (px-8 py-7) para que el texto respire */}
-              <div className="bg-white px-8 py-7 rounded-[2rem] shadow-[0_15px_50px_rgba(0,0,0,0.15)] w-[85%] max-w-[320px] mx-auto flex flex-col items-center gap-1.5 border border-gray-100">
+              <div className="bg-white px-8 py-7 rounded-[2rem] shadow-[0_15px_50px_rgba(0,0,0,0.15)] w-[85%] max-w-[320px] mx-auto flex flex-col items-center gap-1.5 border border-gray-100 mb-2">
                 <span className="text-black font-extrabold text-[9px] tracking-[0.2em] uppercase">Programa de actividades</span>
-                
-                {/* Título más compacto y centrado */}
                 <h1 className="text-[2.5rem] font-black text-[#0033A0] leading-none uppercase mt-1">Semana<br/><span className="text-black">Tecnología</span></h1>
                 <p className="text-2xl font-black text-gray-800 tracking-[0.15em] mt-1 mb-4">2026</p>
-                
-                {/* Botón negro con proporciones correctas */}
                 <div className="bg-[#111] px-5 py-3 rounded-full shadow-md w-full max-w-[210px]">
                   <span className="text-white text-[9px] font-bold tracking-[0.12em] flex items-center justify-center gap-2">
                     <Calendar size={12} className="text-[#0033A0]" /> DEL 24 AL 27 DE MARZO
                   </span>
                 </div>
               </div>
-
             </div>
           </Page>
 
@@ -98,9 +77,8 @@ export default function SaaSFlipbook() {
 
           {/* CONTRAPORTADA BACK */}
           <Page isCover={true} number="Fin">
-            <div className="absolute inset-0 bg-[url('/portada-flipbook.png')] bg-cover bg-left bg-no-repeat z-0"></div>
+            <div className="absolute inset-0 bg-[url('/portada-flipbook.png')] bg-[length:200%_100%] bg-left bg-no-repeat z-0"></div>
           </Page>
-
         </HTMLFlipBook>
       </div>
     </div>
