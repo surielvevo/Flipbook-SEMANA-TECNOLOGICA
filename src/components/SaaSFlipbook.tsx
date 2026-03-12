@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, forwardRef } from 'react';
+import React, { useState, useEffect, useRef, forwardRef } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import { Clock, MapPin, User, Calendar } from 'lucide-react';
 import { scheduleData } from '../data/schedule';
