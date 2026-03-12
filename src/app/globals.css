@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fiaBlue: #0033A0;
+  --color-fiaYellow: #FFD100;
+}
+
+body {
+  background-color: #FFFFFF;
+}
+
+:root {
+  --background: #FFFFFF;
+}
