@@ -32,7 +32,8 @@ export default function SaaSFlipbook() {
 
   return (
     <div className="flex justify-center items-center py-10 min-h-[85vh] relative z-10">
-      <HTMLFlipBook width={550} height={750} size="stretch" showCover={true} className="shadow-2xl mx-auto">
+      {/* @ts-ignore – react-pageflip IProps has incomplete typedefs */}
+      <HTMLFlipBook width={550} height={750} size="stretch" showCover={true} className="shadow-2xl mx-auto" style={{}}>
         <Page isCover={true} number="Portada">
           <div className="absolute inset-0 z-0">
             <Image src="/portada-flipbook.png" alt="Portada" fill priority className="object-cover object-right" sizes="550px" />
