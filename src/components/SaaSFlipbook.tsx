@@ -1,7 +1,6 @@
 'use client';
 import React, { useState, useEffect, forwardRef } from 'react';
 import HTMLFlipBook from 'react-pageflip';
-import Image from 'next/image';
 import { Clock, MapPin, User, Calendar } from 'lucide-react';
 import { scheduleData } from '../data/schedule';
 
@@ -20,18 +19,14 @@ export default function SaaSFlipbook() {
 
   return (
     <div className="flex justify-center items-center py-10 min-h-[85vh] relative z-10">
-      {/* @ts-ignore - Bypass para compatibilidad estricta de react-pageflip */}
+      {/* @ts-ignore */}
       <HTMLFlipBook width={550} height={750} size="stretch" showCover={true} className="shadow-2xl mx-auto">
         
         {/* PORTADA FRONT */}
         <Page isCover={true} number="Portada">
-          <div className="absolute inset-0 z-0">
-            <Image src="/portada-flipbook.png" alt="Portada" fill priority className="object-cover object-right" sizes="550px" />
-          </div>
+          <div className="absolute inset-0 bg-[url('/portada-flipbook.png')] bg-[length:200%_100%] bg-right bg-no-repeat z-0"></div>
           <div className="relative z-10 h-full flex flex-col justify-between items-center text-center p-8 bg-white/10 backdrop-blur-[2px]">
-            <div className="relative w-56 h-32 mt-6 drop-shadow-2xl">
-              <Image src="/logo-institucional.png" alt="Logo FIA" fill priority className="object-contain" />
-            </div>
+            <img src="/logo-institucional.png" alt="Logo FIA" className="w-56 mt-6 drop-shadow-2xl object-contain" />
             <div className="flex-grow"></div>
             <div className="flex flex-col items-center gap-2 mb-6 bg-white/80 p-6 rounded-3xl shadow-xl border border-white">
               <span className="text-black font-bold text-sm tracking-[0.2em] uppercase opacity-80">Programa de actividades</span>
@@ -69,9 +64,7 @@ export default function SaaSFlipbook() {
 
         {/* CONTRAPORTADA BACK */}
         <Page isCover={true} number="Fin">
-          <div className="absolute inset-0 z-0">
-            <Image src="/portada-flipbook.png" alt="Contraportada" fill className="object-cover object-left" sizes="550px" />
-          </div>
+          <div className="absolute inset-0 bg-[url('/portada-flipbook.png')] bg-[length:200%_100%] bg-left bg-no-repeat z-0"></div>
         </Page>
       </HTMLFlipBook>
     </div>
