@@ -38,16 +38,16 @@ export default function SaaSFlipbook() {
         >
           {/* PORTADA FRONT */}
           <Page isCover={true} number="Portada">
-            <div className="absolute inset-0 bg-[url('/portada-flipbook.png')] bg-[length:200%_100%] bg-right bg-no-repeat z-0"></div>
+            <div className="absolute inset-0 bg-[url('/portada-flipbook.png')] bg-cover bg-center bg-no-repeat z-0"></div>
             <div className="relative z-10 h-full flex flex-col justify-between items-center text-center p-8 bg-white/10 backdrop-blur-[2px]">
               <img src="/logo-institucional.png" alt="Logo FIA" className="w-56 mt-6 drop-shadow-2xl object-contain" />
               <div className="flex-grow"></div>
-              <div className="flex flex-col items-center gap-2 mb-6 bg-white/80 p-6 rounded-3xl shadow-xl border border-white">
+              <div className="flex flex-col items-center gap-2 mb-8 w-[85%] max-w-[320px] mx-auto bg-white/80 p-6 rounded-3xl shadow-xl border border-white">
                 <span className="text-black font-bold text-sm tracking-[0.2em] uppercase opacity-80">Programa de actividades</span>
-                <h1 className="text-5xl font-black text-[#0033A0] leading-none uppercase">Semana<br/><span className="text-black">Tecnología</span></h1>
-                <p className="text-2xl font-black text-gray-800 tracking-widest mt-1">2026</p>
-                <div className="mt-4 bg-black/90 px-8 py-3 rounded-full border border-blue-500/30 shadow-2xl">
-                  <span className="text-white text-xs font-bold tracking-widest flex items-center gap-2">
+                <h1 className="text-4xl font-black text-[#0033A0] leading-none uppercase">Semana<br/><span className="text-black">Tecnología</span></h1>
+                <p className="text-xl font-black text-gray-800 tracking-widest mt-1">2026</p>
+                <div className="mt-4 bg-black/90 px-5 py-2.5 rounded-full border border-blue-500/30 shadow-2xl">
+                  <span className="text-white text-[9px] font-bold tracking-widest flex items-center gap-2">
                     <Calendar size={14} className="text-[#0033A0]" /> DEL 24 AL 27 DE MARZO
                   </span>
                 </div>
