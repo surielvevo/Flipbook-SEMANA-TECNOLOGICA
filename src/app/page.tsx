@@ -10,7 +10,7 @@ export default function Home() {
     <main className="min-h-screen flex flex-col relative">
       <TechBackground />
       <header className="relative z-10 w-full bg-white/80 backdrop-blur-sm border-b border-gray-100 p-4 flex justify-between items-center shadow-sm">
-        <div className="font-black text-[#0033A0] tracking-widest text-lg">SEMANA TECNOLOGÍA</div>
+        <div className="font-black text-[#0033A0] tracking-widest text-lg">SEMANA TECNOLOGICA 2026</div>
         <DownloadBtn />
       </header>
       <div className="relative z-10 flex-grow">
