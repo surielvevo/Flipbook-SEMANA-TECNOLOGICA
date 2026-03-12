@@ -44,7 +44,7 @@ export default function SaaSFlipbook() {
         </Page>
         {scheduleData.map((day, i) => (
           <Page key={i} number={i + 1}>
-            <div className="h-full flex flex-col">
+            <div className="h-full flex flex-col text-slate-900">
               <div className="border-b-4 border-[#FFD100] pb-2 mb-4"><h2 className="text-xl font-black text-[#0033A0] uppercase">{day.date}</h2></div>
               <div className="flex-grow flex flex-col justify-around">
                 {day.events.map((e, j) => (
