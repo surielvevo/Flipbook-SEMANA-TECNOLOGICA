@@ -1,12 +1,12 @@
 {
   "name": "flipbook-semana-tecnologica",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "scripts": { "dev": "next dev", "build": "next build", "start": "next start" },
   "dependencies": {
-    "next": "15.1.0",
-    "react": "latest",
-    "react-dom": "latest",
+    "next": "16.0.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-pageflip": "latest",
     "framer-motion": "latest",
     "lucide-react": "latest",
