@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef, forwardRef } from 'react';
+import Image from 'next/image';
 import HTMLFlipBook from 'react-pageflip';
 import { Clock, MapPin, User, ChevronLeft, ChevronRight, Calendar } from 'lucide-react';
 import { scheduleData } from '../data/schedule';
@@ -43,7 +44,16 @@ export default function SaaSFlipbook() {
         <Page isCover={true} number="Portada">
           <div className="absolute inset-0 bg-[url('/portada-flipbook.png')] bg-[length:200%_100%] bg-right bg-no-repeat z-0"></div>
           <div className="relative z-10 h-full flex flex-col justify-between items-center text-center p-8">
-            <img src="/logo-institucional.png" alt="FIA" className="w-56 mt-6 drop-shadow-xl" />
+            <div className="relative w-56 h-32 mt-6 drop-shadow-xl">
+              <Image
+                src="/logo-institucional.png"
+                alt="Logo Institucional"
+                fill
+                priority
+                className="object-contain"
+                sizes="224px"
+              />
+            </div>
             <div className="flex-grow"></div>
             <div className="flex flex-col items-center gap-2 mb-6">
               <span className="text-black font-bold text-sm tracking-[0.2em] uppercase opacity-80">Programa de actividades</span>
