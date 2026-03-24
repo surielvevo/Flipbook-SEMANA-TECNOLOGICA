@@ -33,6 +33,11 @@ export default function SaaSFlipbook() {
   const [showHint, setShowHint] = useState(true);
   const flipRef = useRef<any>(null);
 
+  const handleFlip = useCallback((e: any) => {
+    setCurrentPage(e.data);
+    setShowHint(false);
+  }, []);
+
   useEffect(() => {
     setMounted(true);
 
@@ -54,11 +59,6 @@ export default function SaaSFlipbook() {
   }, []);
 
   if (!mounted) return null;
-
-  const handleFlip = useCallback((e: any) => {
-    setCurrentPage(e.data);
-    setShowHint(false);
-  }, []);
 
   return (
     <div className="flex flex-col justify-center items-center py-4 md:py-6 px-4 min-h-[85vh] relative z-10">
