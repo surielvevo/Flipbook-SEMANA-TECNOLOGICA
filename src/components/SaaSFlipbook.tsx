@@ -80,7 +80,8 @@ export default function SaaSFlipbook() {
           ref={flipRef}
           width={dims.w} height={dims.h} size="fixed"
           minWidth={dims.w} maxWidth={dims.w} minHeight={dims.h} maxHeight={dims.h}
-          maxShadowOpacity={0.4} showCover={true} mobileScrollSupport={true} usePortrait={true}
+          maxShadowOpacity={0.2} showCover={true} mobileScrollSupport={true} usePortrait={true}
+          flippingTime={500} drawShadow={false}
           onFlip={handleFlip}
           className="mx-auto"
         >
