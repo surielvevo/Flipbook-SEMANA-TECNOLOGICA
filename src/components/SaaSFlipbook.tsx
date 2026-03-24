@@ -25,7 +25,7 @@ const pageChunks = scheduleData.flatMap((day) => {
   }
   return chunks;
 });
-const TOTAL_PAGES = 2 + pageChunks.length; // cover + program pages + back cover
+const TOTAL_PAGES = 1 + pageChunks.length; // cover + program pages
 
 export default function SaaSFlipbook() {
   const [mounted, setMounted] = useState(false);
@@ -146,28 +146,6 @@ export default function SaaSFlipbook() {
               </div>
             </Page>
           ))}
-
-          {/* CONTRAPORTADA */}
-          <Page isCover={true} number="Contraportada">
-            <div className="absolute inset-0 bg-[#0033A0] z-0"></div>
-            <div className="absolute inset-0 opacity-10 z-[1]"
-              style={{ backgroundImage: 'radial-gradient(circle at 70% 30%, #ffffff 0%, transparent 60%)' }}>
-            </div>
-            <div className="relative z-10 h-full flex flex-col justify-center items-center text-center gap-5 px-6">
-              <img src="/logo-institucional.png" alt="Logo Institucional"
-                className="w-[70%] max-w-[200px] object-contain brightness-0 invert drop-shadow-lg" />
-              <div className="w-12 h-[3px] bg-[#FFD100] rounded-full"></div>
-              <div className="flex flex-col gap-1">
-                <p className="text-white font-black text-base tracking-wide uppercase">Semana Tecnológica</p>
-                <p className="text-[#FFD100] font-black text-2xl tracking-[0.15em]">2026</p>
-                <p className="text-white/60 text-[10px] font-medium tracking-widest mt-1">DEL 24 AL 27 DE MARZO</p>
-              </div>
-              <div className="w-12 h-[3px] bg-[#FFD100] rounded-full"></div>
-              <p className="text-white/40 text-[9px] font-medium tracking-[0.1em] uppercase mt-2">
-                Dirección de Investigación e Innovación Tecnológica
-              </p>
-            </div>
-          </Page>
 
         </HTMLFlipBook>
       </div>
