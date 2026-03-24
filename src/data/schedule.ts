@@ -4,7 +4,7 @@ export const scheduleData = [
     events: [
       { title: "Introduccion al AUTOCAD", speaker: "Miosotty Rojas", time: "9:00 a.m. - 1:00 p.m.", room: "Aula 208" },
       { title: "Acto de Inauguración", speaker: "Varios", time: "5:00 p.m. - 6:00 p.m.", room: "Aula 505" },
-      { title: "Ceremonia de Premiación", speaker: "Varios", time: "6:00 p.m. - 7:00 p.m.", room: "Aula 505" }
+      { title: "Ceremonia de Reconocimiento", speaker: "Varios", time: "6:00 p.m. - 7:00 p.m.", room: "Aula 505" }
     ]
   },
   {
