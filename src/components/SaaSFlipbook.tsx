@@ -56,24 +56,23 @@ export default function SaaSFlipbook() {
             </div>
           </Page>
 
-          {/* PÁGINAS DEL PROGRAMA */}
-          {scheduleData.map((day, i) => (
+          {/* PÁGINAS DEL PROGRAMA — divididas en chunks de 5 para que ningún evento quede oculto */}
+          {scheduleData.flatMap((day) => {
+            const chunks: { date: string; events: typeof day.events; isFirst: boolean }[] = [];
+            for (let i = 0; i < day.events.length; i += 5) {
+              chunks.push({ date: day.date, events: day.events.slice(i, i + 5), isFirst: i === 0 });
+            }
+            return chunks;
+          }).map((page, i) => (
             <Page key={i} number={i + 1}>
               <div className="h-full flex flex-col text-slate-900 overflow-hidden">
                 <div className="border-b-4 border-[#FFD100] pb-2 mb-3 shrink-0">
-                  <h2 className="text-base md:text-xl font-black text-[#0033A0] uppercase">{day.date}</h2>
+                  <h2 className="text-base md:text-xl font-black text-[#0033A0] uppercase">
+                    {page.date}{!page.isFirst && <span className="text-[10px] font-semibold text-gray-400 ml-2 normal-case">(continuación)</span>}
+                  </h2>
                 </div>
-
-                {/* AISLAMIENTO TÁCTIL: stopPropagation evita que al scrollear se pase la página en el celular */}
-                <div
-                  className="flex-grow flex flex-col justify-start gap-3 md:gap-3.5 overflow-y-auto pr-2 pb-2"
-                  style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }}
-                  onPointerDown={(e) => e.stopPropagation()}
-                  onTouchStart={(e) => e.stopPropagation()}
-                  onTouchMove={(e) => e.stopPropagation()}
-                  onWheel={(e) => e.stopPropagation()}
-                >
-                  {day.events.map((e, j) => (
+                <div className="flex-grow flex flex-col justify-start gap-3 md:gap-3.5 overflow-hidden pr-2 pb-2">
+                  {page.events.map((e, j) => (
                     <div key={j} className="relative pl-3 md:pl-4 py-1 border-l-2 border-slate-200 shrink-0">
                       <span className="flex items-center text-[9px] font-black text-[#0033A0] uppercase"><Clock size={10} className="mr-1" /> {e.time}</span>
                       <h3 className="text-[12px] font-bold text-slate-900 leading-tight mt-0.5">{e.title}</h3>
