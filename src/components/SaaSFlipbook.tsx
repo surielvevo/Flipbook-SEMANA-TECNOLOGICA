@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef, forwardRef, useCallback } from 'react';
+import { motion } from 'framer-motion';
 import HTMLFlipBook from 'react-pageflip';
 import { Clock, MapPin, User, Calendar } from 'lucide-react';
 import { scheduleData } from '../data/schedule';
@@ -28,7 +29,7 @@ const TOTAL_PAGES = 1 + pageChunks.length; // cover + program pages
 
 export default function SaaSFlipbook() {
   const [mounted, setMounted] = useState(false);
-  const [dims, setDims] = useState({ w: 550, h: 750 });
+  const [dims, setDims] = useState({ w: 720, h: Math.round(720 * 750 / 550) });
   const [currentPage, setCurrentPage] = useState(0);
   const [showHint, setShowHint] = useState(true);
   const flipRef = useRef<any>(null);
@@ -42,8 +43,10 @@ export default function SaaSFlipbook() {
     setMounted(true);
 
     const calc = () => {
-      const pad = 32; // 16px each side
-      const w = Math.min(window.innerWidth - pad, 550);
+      const pad = 32;
+      const vw = window.innerWidth;
+      const maxW = vw >= 1024 ? 720 : vw >= 768 ? 600 : 550;
+      const w = Math.min(vw - pad, maxW);
       setDims({ w, h: Math.round(w * (750 / 550)) });
     };
     calc();
@@ -61,7 +64,12 @@ export default function SaaSFlipbook() {
   if (!mounted) return null;
 
   return (
-    <div className="flex flex-col justify-center items-center py-4 md:py-6 px-4 min-h-[85vh] relative z-10">
+    <motion.div
+      className="flex flex-col justify-center items-center py-4 md:py-6 px-4 min-h-[85vh] relative z-10"
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.45, ease: 'easeOut' }}
+    >
 
       {/* Flipbook with JS-computed exact dimensions */}
       <div style={{ width: dims.w, height: dims.h, willChange: 'transform', transform: 'translateZ(0)' }} className="mx-auto relative shadow-2xl rounded-sm">
@@ -150,6 +158,6 @@ export default function SaaSFlipbook() {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
