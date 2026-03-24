@@ -33,6 +33,7 @@ export const scheduleData = [
       { title: "Taller: Trabajo en Equipo y Gestión del Tiempo", speaker: "Angel Bouret", time: "4:00 p.m. - 6:00 p.m.", room: "Aula 510" },
       { title: "Aplicaciones de Energía Nuclear", speaker: "Luis Jose Quiñones", time: "4:00 p.m. - 5:00 p.m.", room: "Aula 505" },
       { title: "Análisis de Fallas en Familia de Equipos", speaker: "Fernando A. Lopez", time: "5:00 p.m. - 6:00 p.m.", room: "Aula 505" },
+      { title: "Realidad Virtual y Simulación: Una Nueva Metodología para el Análisis de Seguridad Vial en Entornos Urbanos", speaker: "Yindhira Taveras", time: "3:00 p.m. - 5:00 p.m.", room: "Aula 308" },
       { title: "Impulsa tu Carrera con Huawei ICT Academy", speaker: "Lorena Garzón", time: "6:00 p.m. - 7:00 p.m.", room: "Aula 505" }
     ]
   },
@@ -44,7 +45,6 @@ export const scheduleData = [
       { title: "Bootcamp SIG: Análisis del Sitio", speaker: "Eva Mejía", time: "9:00 a.m. - 01:00 p.m.", room: "Aula 208" },
       { title: "Introducción al ETABS", speaker: "Daniel Ramirez", time: "11:00 a.m. - 1:00 p.m.", room: "Edificio CIFIA" },
       { title: "IA para futuros sostenibles", speaker: "Aneuris De Los Santos Melo", time: "11:00 a.m. - 1:00 p.m.", room: "Aula 505" },
-      { title: "Realidad Virtual y Simulación: Una Nueva Metodología para el Análisis de Seguridad Vial en Entornos Urbanos", speaker: "Yindhira Taveras", time: "3:00 p.m. - 5:00 p.m.", room: "Aula 308" },
       { title: "Mecánica de Suelos y Rocas en Obras Civiles", speaker: "Persio Diaz", time: "3:00 p.m. - 4:00 p.m.", room: "Aula 505" },
       { title: "Taller: IA en la construcción", speaker: "Giovanni Lagares", time: "4:00 p.m. - 5:00 p.m.", room: "Aula 505" },
       { title: "Introducción a las Herramientas BIM", speaker: "Hector Santana", time: "5:00 p.m. - 6:00 p.m.", room: "Aula 505" },
