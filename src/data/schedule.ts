@@ -4,7 +4,7 @@ export const scheduleData = [
     events: [
       { title: "Introducción al Autocad", speaker: "Miosotty Rojas", time: "9:00 a.m. - 1:00 p.m.", room: "Aula 208" },
       { title: "Acto de Inauguración", speaker: "Varios", time: "5:00 p.m. - 6:00 p.m.", room: "Aula 505" },
-      { title: "Ceremonia de Premiación", speaker: "Varios", time: "6:00 p.m. - 7:00 p.m.", room: "Aula 508" }
+      { title: "Ceremonia de Premiación", speaker: "Varios", time: "6:00 p.m. - 7:00 p.m.", room: "Aula 505" }
     ]
   },
   {
@@ -17,7 +17,7 @@ export const scheduleData = [
       { title: "Sistemas biocover y control de contaminación marina", speaker: "Anthony Samuel Adames Suarez", time: "3:00 p.m. - 4:00 p.m.", room: "Aula 505 / Virtual" },
       { title: "Evaluación de Mediciones Eléctricas en Máquinas Eléctricas, explicación del comportamiento y Elaboración de Informes", speaker: "Rafael Guerrero", time: "3:00 p.m. - 5:00 p.m.", room: "Aula 208" },
       { title: "Curso: Mapeo térmico en almacenes de establecimientos Farmacéuticos", speaker: "Marcy German y Fernando Nina", time: "4:00 p.m. - 6:00 p.m.", room: "Aula 510" },
-      { title: "Islas de Calor Urbanas", speaker: "Pedro Sosa", time: "4:00 p.m. - 5:00 p.m.", room: "Aula 505" },
+      { title: "CANCELADA: Islas de Calor Urbanas", speaker: "Pedro Sosa", time: "4:00 p.m. - 5:00 p.m.", room: "Aula 505" },
       { title: "Análisis de esfuerzos en el cuello femoral", speaker: "Jose Luis Soto Trinidad / Carlos Florentino", time: "5:00 p.m. - 6:00 p.m.", room: "Aula 505" },
       { title: "Selección y Diseño de Sistemas Solares: Térmicos y Fotovoltaicos", speaker: "Jose Luis Moreno San Juan", time: "6:00 p.m. - 7:00 p.m.", room: "Aula 505" }
     ]
