@@ -6,9 +6,9 @@ import { scheduleData } from '../data/schedule';
 
 const Page = forwardRef<HTMLDivElement, any>(({ children, number, isCover = false }, ref) => (
   <div ref={ref} className="relative bg-white overflow-hidden flex flex-col h-full shadow-inner border-l border-gray-100">
-    <div className={`flex-grow h-full flex flex-col relative z-10 ${isCover ? '' : 'pt-6 px-4 md:px-6 pb-12 overflow-hidden'}`}>{children}</div>
+    <div className={`flex-grow flex flex-col relative z-10 ${isCover ? '' : 'pt-4 px-3 pb-9 overflow-hidden'}`}>{children}</div>
     {!isCover && (
-      <div className="absolute bottom-0 w-full text-center z-20 text-[10px] font-bold text-[#0033A0] bg-gradient-to-t from-white via-white to-transparent pt-6 pb-3 pointer-events-none">
+      <div className="absolute bottom-0 w-full text-center z-20 text-[10px] font-bold text-[#0033A0] bg-gradient-to-t from-white via-white to-transparent pt-4 pb-2 pointer-events-none">
         Pág. {number}
       </div>
     )}
@@ -56,27 +56,27 @@ export default function SaaSFlipbook() {
             </div>
           </Page>
 
-          {/* PÁGINAS DEL PROGRAMA — divididas en chunks de 5 para que ningún evento quede oculto */}
+          {/* PÁGINAS DEL PROGRAMA — chunks de 4 para que todo quepa sin overflow en cualquier pantalla */}
           {scheduleData.flatMap((day) => {
             const chunks: { date: string; events: typeof day.events; isFirst: boolean }[] = [];
-            for (let i = 0; i < day.events.length; i += 5) {
-              chunks.push({ date: day.date, events: day.events.slice(i, i + 5), isFirst: i === 0 });
+            for (let i = 0; i < day.events.length; i += 4) {
+              chunks.push({ date: day.date, events: day.events.slice(i, i + 4), isFirst: i === 0 });
             }
             return chunks;
           }).map((page, i) => (
             <Page key={i} number={i + 1}>
               <div className="h-full flex flex-col text-slate-900 overflow-hidden">
-                <div className="border-b-4 border-[#FFD100] pb-2 mb-3 shrink-0">
-                  <h2 className="text-base md:text-xl font-black text-[#0033A0] uppercase">
-                    {page.date}{!page.isFirst && <span className="text-[10px] font-semibold text-gray-400 ml-2 normal-case">(continuación)</span>}
+                <div className="border-b-4 border-[#FFD100] pb-1 mb-2 shrink-0">
+                  <h2 className="text-sm md:text-base font-black text-[#0033A0] uppercase">
+                    {page.date}{!page.isFirst && <span className="text-[9px] font-semibold text-gray-400 ml-2 normal-case">(continuación)</span>}
                   </h2>
                 </div>
-                <div className="flex-grow flex flex-col justify-start gap-3 md:gap-3.5 overflow-hidden pr-2 pb-2">
+                <div className="flex-grow flex flex-col justify-start gap-2 overflow-hidden pr-1 pb-1">
                   {page.events.map((e, j) => (
-                    <div key={j} className="relative pl-3 md:pl-4 py-1 border-l-2 border-slate-200 shrink-0">
+                    <div key={j} className="relative pl-3 py-0.5 border-l-2 border-slate-200 shrink-0">
                       <span className="flex items-center text-[9px] font-black text-[#0033A0] uppercase"><Clock size={10} className="mr-1" /> {e.time}</span>
-                      <h3 className="text-[12px] font-bold text-slate-900 leading-tight mt-0.5">{e.title}</h3>
-                      <div className="flex items-center text-[10px] text-gray-600 gap-2 truncate mt-1">
+                      <h3 className="text-[11px] font-bold text-slate-900 leading-tight">{e.title}</h3>
+                      <div className="flex flex-wrap items-center text-[9px] text-gray-600 gap-x-2 gap-y-0.5">
                         <span className="flex items-center gap-1"><User size={10} /> {e.speaker}</span>
                         <span className="flex items-center gap-1"><MapPin size={10} /> {e.room}</span>
                       </div>
