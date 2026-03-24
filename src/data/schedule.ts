@@ -3,7 +3,6 @@ export const scheduleData = [
     date: "MARTES 24 DE MARZO",
     events: [
       { title: "Introduccion al AUTOCAD", speaker: "Miosotty Rojas", time: "9:00 a.m. - 1:00 p.m.", room: "Aula 208" },
-      { title: "Conferencia: Análisis y mejora de procesos mediante herramientas tecnológicas para la toma de decisiones en las organizaciones: Casos prácticos", speaker: "Willian Fermin", time: "4:00 p.m.", room: "Aula 505" },
       { title: "Acto de Inauguración", speaker: "Varios", time: "5:00 p.m. - 6:00 p.m.", room: "Aula 505" },
       { title: "Ceremonia de Premiación", speaker: "Varios", time: "6:00 p.m. - 7:00 p.m.", room: "Aula 505" }
     ]
@@ -19,6 +18,7 @@ export const scheduleData = [
       { title: "Evaluación de Mediciones Eléctricas en Máquinas Eléctricas, explicación del comportamiento y Elaboración de Informes", speaker: "Rafael Guerrero", time: "3:00 p.m. - 5:00 p.m.", room: "Aula 208" },
       { title: "Curso: Mapeo térmico en almacenes de establecimientos Farmacéuticos", speaker: "Marcy German y Fernando Nina", time: "4:00 p.m. - 6:00 p.m.", room: "Aula 510" },
       { title: "CANCELADA: Islas de Calor Urbanas", speaker: "Pedro Sosa", time: "4:00 p.m. - 5:00 p.m.", room: "Aula 505" },
+      { title: "Conferencia: Análisis y mejora de procesos mediante herramientas tecnológicas para la toma de decisiones en las organizaciones: Casos prácticos", speaker: "Willian Fermin", time: "4:00 p.m.", room: "Aula 505" },
       { title: "Análisis de esfuerzos en el cuello femoral", speaker: "Jose Luis Soto Trinidad / Carlos Florentino", time: "5:00 p.m. - 6:00 p.m.", room: "Aula 505" },
       { title: "Selección y Diseño de Sistemas Solares: Térmicos y Fotovoltaicos", speaker: "Jose Luis Moreno San Juan", time: "6:00 p.m. - 7:00 p.m.", room: "Aula 505" }
     ]
