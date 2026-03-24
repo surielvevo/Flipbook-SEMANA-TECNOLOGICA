@@ -25,7 +25,7 @@ const pageChunks = scheduleData.flatMap((day) => {
   }
   return chunks;
 });
-const TOTAL_PAGES = 1 + pageChunks.length; // cover + program pages
+const TOTAL_PAGES = 2 + pageChunks.length; // cover + program pages + back cover
 
 export default function SaaSFlipbook() {
   const [mounted, setMounted] = useState(false);
@@ -97,19 +97,24 @@ export default function SaaSFlipbook() {
           {/* PORTADA */}
           <Page isCover={true} number="Portada">
             <div className="absolute inset-0 bg-[url('/portada-flipbook.png')] bg-cover bg-center bg-no-repeat z-0"></div>
-            <div className="relative z-10 h-full flex flex-col justify-between items-center text-center py-8">
-              <div className="w-[85%] max-w-[260px] flex justify-center mt-2">
-                <img src="/logo-institucional.png" alt="Logo Institucional" className="w-full drop-shadow-md object-contain" />
+            {/* Gradient overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#001a5e]/90 via-[#001a5e]/30 to-transparent z-[1]"></div>
+            <div className="relative z-10 h-full flex flex-col justify-between items-center text-center py-6 px-4">
+              {/* Logo top */}
+              <div className="w-[75%] max-w-[220px] flex justify-center mt-3 drop-shadow-xl">
+                <img src="/logo-institucional.png" alt="Logo Institucional" className="w-full object-contain" />
               </div>
-              <div className="flex-grow"></div>
-              <div className="bg-white px-6 md:px-8 py-5 md:py-7 rounded-[2rem] shadow-[0_15px_50px_rgba(0,0,0,0.15)] w-[90%] max-w-[320px] mx-auto flex flex-col items-center gap-1.5 border border-gray-100 mb-2">
-                <span className="text-black font-extrabold text-[8px] md:text-[9px] tracking-[0.2em] uppercase">Programa de actividades</span>
-                <h1 className="text-3xl md:text-[2.5rem] font-black text-[#0033A0] leading-none uppercase mt-1">Semana<br /><span className="text-black">Tecnológica</span></h1>
-                <p className="text-xl md:text-2xl font-black text-gray-800 tracking-[0.15em] mt-1 mb-4">2026</p>
-                <div className="bg-[#111] px-4 md:px-5 py-3 rounded-full shadow-md w-full max-w-[210px]">
-                  <span className="text-white text-[8px] md:text-[9px] font-bold tracking-[0.12em] flex items-center justify-center gap-2">
-                    <Calendar size={12} className="text-[#FFD100]" /> DEL 24 AL 27 DE MARZO
-                  </span>
+              {/* Text bottom */}
+              <div className="flex flex-col items-center gap-2 mb-5">
+                <span className="text-white/75 font-bold text-[8px] tracking-[0.25em] uppercase">Programa de actividades</span>
+                <h1 className="text-[2.2rem] md:text-[2.8rem] font-black leading-[1.05] uppercase drop-shadow-lg">
+                  <span className="text-white">Semana</span><br />
+                  <span className="text-[#FFD100]">Tecnológica</span>
+                </h1>
+                <p className="text-white text-2xl font-black tracking-[0.2em] drop-shadow-lg">2026</p>
+                <div className="flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm px-4 py-2 rounded-full mt-1">
+                  <Calendar size={11} className="text-[#FFD100] shrink-0" />
+                  <span className="text-white text-[9px] font-bold tracking-[0.12em]">DEL 24 AL 27 DE MARZO</span>
                 </div>
               </div>
             </div>
@@ -141,6 +146,28 @@ export default function SaaSFlipbook() {
               </div>
             </Page>
           ))}
+
+          {/* CONTRAPORTADA */}
+          <Page isCover={true} number="Contraportada">
+            <div className="absolute inset-0 bg-[#0033A0] z-0"></div>
+            <div className="absolute inset-0 opacity-10 z-[1]"
+              style={{ backgroundImage: 'radial-gradient(circle at 70% 30%, #ffffff 0%, transparent 60%)' }}>
+            </div>
+            <div className="relative z-10 h-full flex flex-col justify-center items-center text-center gap-5 px-6">
+              <img src="/logo-institucional.png" alt="Logo Institucional"
+                className="w-[70%] max-w-[200px] object-contain brightness-0 invert drop-shadow-lg" />
+              <div className="w-12 h-[3px] bg-[#FFD100] rounded-full"></div>
+              <div className="flex flex-col gap-1">
+                <p className="text-white font-black text-base tracking-wide uppercase">Semana Tecnológica</p>
+                <p className="text-[#FFD100] font-black text-2xl tracking-[0.15em]">2026</p>
+                <p className="text-white/60 text-[10px] font-medium tracking-widest mt-1">DEL 24 AL 27 DE MARZO</p>
+              </div>
+              <div className="w-12 h-[3px] bg-[#FFD100] rounded-full"></div>
+              <p className="text-white/40 text-[9px] font-medium tracking-[0.1em] uppercase mt-2">
+                Dirección de Investigación e Innovación Tecnológica
+              </p>
+            </div>
+          </Page>
 
         </HTMLFlipBook>
       </div>
