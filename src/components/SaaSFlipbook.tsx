@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, useRef, forwardRef } from 'react';
+import React, { useState, useEffect, useRef, forwardRef, useCallback } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import { Clock, MapPin, User, Calendar } from 'lucide-react';
 import { scheduleData } from '../data/schedule';
@@ -55,16 +55,16 @@ export default function SaaSFlipbook() {
 
   if (!mounted) return null;
 
-  const handleFlip = (e: any) => {
+  const handleFlip = useCallback((e: any) => {
     setCurrentPage(e.data);
     setShowHint(false);
-  };
+  }, []);
 
   return (
     <div className="flex flex-col justify-center items-center py-4 md:py-6 px-4 min-h-[85vh] relative z-10">
 
       {/* Flipbook with JS-computed exact dimensions */}
-      <div style={{ width: dims.w, height: dims.h }} className="mx-auto relative shadow-2xl rounded-sm">
+      <div style={{ width: dims.w, height: dims.h, willChange: 'transform', transform: 'translateZ(0)' }} className="mx-auto relative shadow-2xl rounded-sm">
 
         {/* Swipe hint — fades after first interaction or 4 s */}
         {showHint && (
@@ -81,7 +81,7 @@ export default function SaaSFlipbook() {
           width={dims.w} height={dims.h} size="fixed"
           minWidth={dims.w} maxWidth={dims.w} minHeight={dims.h} maxHeight={dims.h}
           maxShadowOpacity={0.2} showCover={true} mobileScrollSupport={true} usePortrait={true}
-          flippingTime={500} drawShadow={false}
+          flippingTime={400} drawShadow={false}
           onFlip={handleFlip}
           className="mx-auto"
         >
